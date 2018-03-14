@@ -18,7 +18,7 @@ import java.util.function.LongFunction;
  * @see java.util.function.Function
  * @see java.util.function.LongFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -52,9 +52,9 @@ public interface XLongFunction<R> {
     /**
      * Wraps a standard {@link LongFunction} into a {@code XLongFunction}.
      * @param toWrap the {@link LongFunction} which will be wrapped
-     * @param <R> the type of output of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XLongFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <R> the type of the output of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XLongFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <R> XLongFunction<R> wrap(LongFunction<R> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

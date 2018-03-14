@@ -18,7 +18,7 @@ import java.util.function.DoubleSupplier;
  * @see DoubleSupplier
  * @see XSupplier
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,8 +51,8 @@ public interface XDoubleSupplier {
     /**
      * Wraps an standard {@link DoubleSupplier} into a {@code XDoubleSupplier}.
      * @param toWrap the {@link DoubleSupplier} which will be wrapped
-     * @return toWrap wrapped as a {@code XDoubleSupplier}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XDoubleSupplier}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XDoubleSupplier wrap(DoubleSupplier toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

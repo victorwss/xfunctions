@@ -14,7 +14,9 @@ import java.util.function.Supplier;
  *
  * @param <T> the type of results supplied by this supplier
  *
- * @since XJFunction 1.0
+ * @see Supplier
+ *
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -47,9 +49,9 @@ public interface XSupplier<T> {
     /**
      * Wraps a standard {@link Supplier} into a {@code XSupplier}.
      * @param toWrap the {@link Supplier} which will be wrapped
-     * @param <T> the type of output of the {@code toWrap} supplier
-     * @return toWrap wrapped as a {@code XSupplier}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the output of the {@code toWrap} supplier
+     * @return {@code toWrap} wrapped as a {@code XSupplier}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T> XSupplier<T> wrap(Supplier<T> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

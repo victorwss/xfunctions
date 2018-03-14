@@ -14,9 +14,9 @@ import java.util.function.Function;
  * @param <T> the type of the input to the function
  * @param <R> the type of the result of the function
  *
- * @see java.util.function.Function
+ * @see Function
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -100,10 +100,10 @@ public interface XFunction<T, R> {
     /**
      * Wraps a standard {@link Function} into a {@code XFunction}.
      * @param toWrap the {@link Function} which will be wrapped
-     * @param <T> the type of input of the {@code toWrap} function
-     * @param <R> the type of output of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the input of the {@code toWrap} function
+     * @param <R> the type of the output of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T, R> XFunction<T, R> wrap(Function<T, R> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

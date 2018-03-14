@@ -17,7 +17,7 @@ import java.util.function.ToLongFunction;
  * @see XFunction
  * @see ToLongFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,9 +51,9 @@ public interface XToLongFunction<T> {
     /**
      * Wraps a standard {@link ToLongFunction} into a {@code XToLongFunction}.
      * @param toWrap the {@link ToLongFunction} which will be wrapped
-     * @param <T> the type of input of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XToLongFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the input of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XToLongFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T> XToLongFunction<T> wrap(ToLongFunction<T> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

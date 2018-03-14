@@ -17,7 +17,11 @@ import java.util.function.BiConsumer;
  * @param <T> the type of the first argument to the operation
  * @param <U> the type of the second argument to the operation
  *
- * @since XJFunction 1.0
+ * @see java.util.function.Consumer
+ * @see java.util.function.BiConsumer
+ * @see XConsumer
+ *
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -72,10 +76,10 @@ public interface XBiConsumer<T, U> {
     /**
      * Wraps a standard {@link BiConsumer} into a {@code XBiConsumer}.
      * @param toWrap the {@link BiConsumer} which will be wrapped
-     * @param <T> the type of first input of the {@code toWrap} supplier
-     * @param <U> the type of second input of the {@code toWrap} supplier
-     * @return toWrap wrapped as a {@code XBiConsumer}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the first input of the {@code toWrap} consumer
+     * @param <U> the type of the second input of the {@code toWrap} consumer
+     * @return {@code toWrap} wrapped as a {@code XBiConsumer}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T, U> XBiConsumer<T, U> wrap(BiConsumer<T, U> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

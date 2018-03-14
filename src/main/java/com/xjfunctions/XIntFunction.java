@@ -18,7 +18,7 @@ import java.util.function.IntFunction;
  * @see java.util.function.Function
  * @see java.util.function.IntFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -52,9 +52,9 @@ public interface XIntFunction<R> {
     /**
      * Wraps a standard {@link IntFunction} into a {@code XIntFunction}.
      * @param toWrap the {@link IntFunction} which will be wrapped
-     * @param <R> the type of output of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XIntFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <R> the type of the output of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XIntFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <R> XIntFunction<R> wrap(IntFunction<R> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

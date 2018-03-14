@@ -1,14 +1,14 @@
 package com.xjfunctions;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
 /**
  * Represents an operation that accepts a single {@code long}-valued argument and
  * returns no result, but might throw any exception. This is both the
- * primitive type specialization of {@link Consumer} for {@code long} and
- * the exception-friendly specialization of {@link LongConsumer}.
+ * primitive type specialization of {@link java.util.function.Consumer Consumer}
+ * for {@code long} and
+ * the exception-friendly specialization of {@link java.util.function.LongConsumer LongConsumer}.
  * Unlike most other functional interfaces,
  * {@code XLongConsumer} is expected to operate via side-effects.
  *
@@ -18,10 +18,11 @@ import java.util.function.LongConsumer;
  * <p>This is a functional interface
  * whose functional method is {@link #accept(long)}.
  *
+ * @see java.util.function.Consumer
  * @see LongConsumer
  * @see XConsumer
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -74,8 +75,8 @@ public interface XLongConsumer {
     /**
      * Wraps an standard {@link LongConsumer} into a {@code XLongConsumer}.
      * @param toWrap the {@link LongConsumer} which will be wrapped
-     * @return toWrap wrapped as a {@code XLongConsumer}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XLongConsumer}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XLongConsumer wrap(LongConsumer toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

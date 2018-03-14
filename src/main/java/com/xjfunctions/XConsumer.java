@@ -4,8 +4,20 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
+ * Represents an operation that accepts a single input argument, returns no
+ * result and might throw any exception.
+ * This is the exception-friendly specialization of {@link Consumer}.
+ * Unlike most other functional interfaces, {@code XConsumer} is expected
+ * to operate via side-effects.
  *
- * @since XJFunction 1.0
+ * <p>This is a functional interface
+ * whose functional method is {@link #accept(Object)}.
+ *
+ * @param <T> the type of the input to the operation
+ *
+ * @see Consumer
+ *
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -60,9 +72,9 @@ public interface XConsumer<T> {
     /**
      * Wraps a standard {@link Consumer} into a {@code XConsumer}.
      * @param toWrap the {@link Consumer} which will be wrapped
-     * @param <T> the type of input of the {@code toWrap} supplier
-     * @return toWrap wrapped as a {@code XConsumer}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the input of the {@code toWrap} consumer
+     * @return {@code toWrap} wrapped as a {@code XConsumer}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T> XConsumer<T> wrap(Consumer<T> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

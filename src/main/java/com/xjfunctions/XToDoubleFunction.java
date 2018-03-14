@@ -17,7 +17,7 @@ import java.util.function.ToDoubleFunction;
  * @see XFunction
  * @see ToDoubleFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,9 +51,9 @@ public interface XToDoubleFunction<T> {
     /**
      * Wraps a standard {@link ToDoubleFunction} into a {@code XToDoubleFunction}.
      * @param toWrap the {@link ToDoubleFunction} which will be wrapped
-     * @param <T> the type of input of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XToDoubleFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the input of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XToDoubleFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T> XToDoubleFunction<T> wrap(ToDoubleFunction<T> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

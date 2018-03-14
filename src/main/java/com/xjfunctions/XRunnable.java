@@ -8,7 +8,9 @@ import java.util.Objects;
  * <p>This is a functional interface
  * whose functional method is {@link #run()}.
  *
- * @since XJFunction 1.0
+ * @see Runnable
+ *
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -40,8 +42,8 @@ public interface XRunnable {
     /**
      * Wraps a standard {@link Runnable} into a {@code XRunnable}.
      * @param toWrap the {@link Runnable} which will be wrapped
-     * @return toWrap wrapped as a {@code XRunnable}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XRunnable}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XRunnable wrap(Runnable toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

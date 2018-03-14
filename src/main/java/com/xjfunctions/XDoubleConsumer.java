@@ -1,14 +1,14 @@
 package com.xjfunctions;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /**
  * Represents an operation that accepts a single {@code double}-valued argument and
  * returns no result, but might throw any exception. This is both the
- * primitive type specialization of {@link Consumer} for {@code double} and
- * the exception-friendly specialization of {@link DoubleConsumer}.
+ * primitive type specialization of {@link java.util.function.Consumer Consumer}
+ * for {@code double} and
+ * the exception-friendly specialization of {@link java.util.function.DoubleConsumer DoubleConsumer}.
  * Unlike most other functional interfaces,
  * {@code XDoubleConsumer} is expected to operate via side-effects.
  *
@@ -18,10 +18,11 @@ import java.util.function.DoubleConsumer;
  * <p>This is a functional interface
  * whose functional method is {@link #accept(double)}.
  *
- * @see DoubleConsumer
+ * @see java.util.function.Consumer
+ * @see java.util.function.DoubleConsumer
  * @see XConsumer
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -74,8 +75,8 @@ public interface XDoubleConsumer {
     /**
      * Wraps an standard {@link DoubleConsumer} into a {@code XDoubleConsumer}.
      * @param toWrap the {@link DoubleConsumer} which will be wrapped
-     * @return toWrap wrapped as a {@code XDoubleConsumer}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XDoubleConsumer}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XDoubleConsumer wrap(DoubleConsumer toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

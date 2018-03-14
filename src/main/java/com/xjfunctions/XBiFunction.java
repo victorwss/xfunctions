@@ -16,9 +16,11 @@ import java.util.function.BiFunction;
  * @param <U> the type of the second argument to the function
  * @param <R> the type of the result of the function
  *
+ * @see java.util.function.Function
  * @see java.util.function.BiFunction
+ * @see XFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -71,11 +73,11 @@ public interface XBiFunction<T, U, R> {
     /**
      * Wraps a standard {@link BiFunction} into a {@code XBiFunction}.
      * @param toWrap the {@link BiFunction} which will be wrapped
-     * @param <T> the type of first input of the {@code toWrap} function
-     * @param <U> the type of second input of the {@code toWrap} function
-     * @param <R> the type of output of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XBiFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the first input of the {@code toWrap} function
+     * @param <U> the type of the second input of the {@code toWrap} function
+     * @param <R> the type of the output of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XBiFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T, U, R> XBiFunction<T, U, R> wrap(BiFunction<T, U, R> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

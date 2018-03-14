@@ -17,7 +17,7 @@ import java.util.function.ToIntFunction;
  * @see XFunction
  * @see ToIntFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,9 +51,9 @@ public interface XToIntFunction<T> {
     /**
      * Wraps a standard {@link ToIntFunction} into a {@code XToIntFunction}.
      * @param toWrap the {@link ToIntFunction} which will be wrapped
-     * @param <T> the type of input of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XToIntFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <T> the type of the input of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XToIntFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <T> XToIntFunction<T> wrap(ToIntFunction<T> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

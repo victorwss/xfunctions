@@ -1,14 +1,15 @@
 package com.xjfunctions;
 
 import java.util.Objects;
-import java.util.function.Consumer;
+
 import java.util.function.IntConsumer;
 
 /**
  * Represents an operation that accepts a single {@code int}-valued argument and
  * returns no result, but might throw any exception. This is both the
- * primitive type specialization of {@link Consumer} for {@code int} and
- * the exception-friendly specialization of {@link IntConsumer}.
+ * primitive type specialization of {@link java.util.function.Consumer Consumer}
+ * for {@code int} and
+ * the exception-friendly specialization of {@link java.util.function.IntConsumer IntConsumer}.
  * Unlike most other functional interfaces,
  * {@code XIntConsumer} is expected to operate via side-effects.
  *
@@ -18,10 +19,11 @@ import java.util.function.IntConsumer;
  * <p>This is a functional interface
  * whose functional method is {@link #accept(int)}.
  *
- * @see IntConsumer
+ * @see java.util.function.Consumer
+ * @see java.util.function.IntConsumer
  * @see XConsumer
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -74,8 +76,8 @@ public interface XIntConsumer {
     /**
      * Wraps an standard {@link IntConsumer} into a {@code XIntConsumer}.
      * @param toWrap the {@link IntConsumer} which will be wrapped
-     * @return toWrap wrapped as a {@code XIntConsumer}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XIntConsumer}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XIntConsumer wrap(IntConsumer toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

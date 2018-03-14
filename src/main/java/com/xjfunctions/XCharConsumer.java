@@ -1,12 +1,12 @@
 package com.xjfunctions;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Represents an operation that accepts a single {@code char}-valued argument and
  * returns no result, but might throw any exception. This is both the
- * primitive type specialization of {@link Consumer} for {@code char} and
+ * primitive type specialization of {@link java.util.function.Consumer Consumer}
+ * for {@code char} and
  * the exception-friendly specialization of {@link CharConsumer}.
  * Unlike most other functional interfaces,
  * {@code XCharConsumer} is expected to operate via side-effects.
@@ -17,10 +17,11 @@ import java.util.function.Consumer;
  * <p>This is a functional interface
  * whose functional method is {@link #accept(char)}.
  *
+ * @see java.util.function.Consumer
  * @see CharConsumer
  * @see XConsumer
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -73,8 +74,8 @@ public interface XCharConsumer {
     /**
      * Wraps an standard {@link CharConsumer} into a {@code XCharConsumer}.
      * @param toWrap the {@link CharConsumer} which will be wrapped
-     * @return toWrap wrapped as a {@code XLongConsumer}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XLongConsumer}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XCharConsumer wrap(CharConsumer toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

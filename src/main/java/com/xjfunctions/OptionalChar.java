@@ -19,7 +19,7 @@ import java.util.function.Supplier;
  * ({@code ==}), identity hash code, or synchronization) on instances of
  * {@code OptionalChar} may have unpredictable results and should be avoided.
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 public class OptionalChar {
@@ -201,7 +201,6 @@ public class OptionalChar {
 
     /**
      * {@inheritDoc}
-     *
      * Returns a non-empty string representation of this object suitable for
      * debugging. The exact presentation format is unspecified and may vary
      * between implementations and versions.

@@ -1,11 +1,9 @@
 package com.xjfunctions;
 
-import java.util.function.Function;
-
 /**
  * Represents a function that accepts a char-valued argument and produces a
  * result.  This is the {@code char}-consuming primitive specialization for
- * {@link Function}.
+ * {@link java.util.function.Function Function}.
  *
  * <p>This is a functional interface
  * whose functional method is {@link #apply(char)}.
@@ -15,7 +13,7 @@ import java.util.function.Function;
  * @see java.util.function.Function
  * @see java.util.function.IntFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface

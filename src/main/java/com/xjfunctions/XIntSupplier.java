@@ -18,7 +18,7 @@ import java.util.function.IntSupplier;
  * @see IntSupplier
  * @see XSupplier
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,8 +51,8 @@ public interface XIntSupplier {
     /**
      * Wraps an standard {@link IntSupplier} into a {@code XIntSupplier}.
      * @param toWrap the {@link IntSupplier} which will be wrapped
-     * @return toWrap wrapped as a {@code XIntSupplier}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XIntSupplier}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XIntSupplier wrap(IntSupplier toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

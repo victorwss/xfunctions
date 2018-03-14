@@ -1,8 +1,11 @@
 package com.xjfunctions;
 
+import java.util.Objects;
+
 /**
  * Exception used to wrap-up other exceptions thrown by functional operations.
- * @since XJFunction 1.0
+ *
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 public class WrapperException extends RuntimeException {
@@ -28,7 +31,7 @@ public class WrapperException extends RuntimeException {
      * @throws T The exception to be thrown
      */
     public <T extends Throwable> WrapperException rethrow(Class<T> exceptionClass) throws T {
-        if (exceptionClass == null) throw new NullPointerException("exceptionClass");
+        Objects.requireNonNull(exceptionClass, "exceptionClass");
         Throwable cause = getCause();
         if (exceptionClass.isInstance(cause)) throw exceptionClass.cast(cause);
         return this;

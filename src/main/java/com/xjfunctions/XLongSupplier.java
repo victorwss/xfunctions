@@ -18,7 +18,7 @@ import java.util.function.LongSupplier;
  * @see LongSupplier
  * @see XSupplier
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,8 +51,8 @@ public interface XLongSupplier {
     /**
      * Wraps an standard {@link LongSupplier} into a {@code XLongSupplier}.
      * @param toWrap the {@link LongSupplier} which will be wrapped
-     * @return toWrap wrapped as a {@code XLongSupplier}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XLongSupplier}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XLongSupplier wrap(LongSupplier toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

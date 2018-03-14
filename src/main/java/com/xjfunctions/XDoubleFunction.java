@@ -18,7 +18,7 @@ import java.util.function.DoubleFunction;
  * @see java.util.function.Function
  * @see java.util.function.DoubleFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -52,9 +52,9 @@ public interface XDoubleFunction<R> {
     /**
      * Wraps a standard {@link DoubleFunction} into a {@code XDoubleFunction}.
      * @param toWrap the {@link DoubleFunction} which will be wrapped
-     * @param <R> the type of output of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XDoubleFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <R> the type of the output of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XDoubleFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <R> XDoubleFunction<R> wrap(DoubleFunction<R> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

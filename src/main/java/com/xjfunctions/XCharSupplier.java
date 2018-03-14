@@ -17,7 +17,7 @@ import java.util.Objects;
  * @see CharSupplier
  * @see XSupplier
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -50,8 +50,8 @@ public interface XCharSupplier {
     /**
      * Wraps an standard {@link CharSupplier} into a {@code XCharSupplier}.
      * @param toWrap the {@link CharSupplier} which will be wrapped
-     * @return toWrap wrapped as a {@code XCharSupplier}.
-     * @throws NullPointerException if toWrap is null
+     * @return {@code toWrap} wrapped as a {@code XCharSupplier}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static XCharSupplier wrap(CharSupplier toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");

@@ -1,10 +1,9 @@
 package com.xjfunctions;
 
-import java.util.function.Supplier;
-
 /**
  * Represents a supplier of {@code char}-valued results.  This is the
- * {@code char}-producing primitive specialization of {@link Supplier}.
+ * {@code char}-producing primitive specialization of
+ * {@link java.util.function.Supplier Supplier}.
  *
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked.
@@ -12,10 +11,10 @@ import java.util.function.Supplier;
  * <p>This is afunctional interface
  * whose functional method is {@link #getAsChar()}.
  *
- * @see Supplier
  * @see java.util.function.Supplier
+ * @see java.util.function.IntSupplier
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface

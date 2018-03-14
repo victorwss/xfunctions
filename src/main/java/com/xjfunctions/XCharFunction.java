@@ -17,7 +17,7 @@ import java.util.Objects;
  * @see java.util.function.Function
  * @see CharFunction
  *
- * @since XJFunction 1.0
+ * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
  */
 @FunctionalInterface
@@ -51,9 +51,9 @@ public interface XCharFunction<R> {
     /**
      * Wraps a standard {@link CharFunction} into a {@code XCharFunction}.
      * @param toWrap the {@link CharFunction} which will be wrapped
-     * @param <R> the type of output of the {@code toWrap} function
-     * @return toWrap wrapped as a {@code XCharFunction}.
-     * @throws NullPointerException if toWrap is null
+     * @param <R> the type of the output of the {@code toWrap} function
+     * @return {@code toWrap} wrapped as a {@code XCharFunction}.
+     * @throws NullPointerException if {@code toWrap} is null
      */
     public static <R> XCharFunction<R> wrap(CharFunction<R> toWrap) {
         Objects.requireNonNull(toWrap, "toWrap");
