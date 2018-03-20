@@ -72,7 +72,7 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId 'com.xjfunctions'
+            groupId 'ninja.javahacker'
             artifactId 'xjfunctions'
             version '1.0'
 
