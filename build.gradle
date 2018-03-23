@@ -10,6 +10,7 @@ plugins {
     id "com.github.spotbugs" version "1.6.1"
 }
 
+apply plugin: 'base'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: 'checkstyle'
@@ -19,12 +20,6 @@ checkstyle {
 }
 spotbugs {
     toolVersion = "3.1.2"
-}
-
-if (JavaVersion.current() == JavaVersion.VERSION_1_9) {
-    sourceCompatibility = 9
-} else {
-    sourceCompatibility = 1.8
 }
 
 version = 1.0
