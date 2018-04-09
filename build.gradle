@@ -43,25 +43,26 @@ repositories {
 
 dependencies {
     // SpotBugs
-    compileOnly group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
-    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: '3.1.2'
-    compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
-    testCompileOnly group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
-    testCompileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: '3.1.2'
-    testCompileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+    compileOnly group: 'net.jcip', name: 'jcip-annotations', version: "1.0"
+    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: "3.1.2"
+    compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: "3.0.2"
+    testCompileOnly group: 'net.jcip', name: 'jcip-annotations', version: "1.0"
+    testCompileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: "3.1.2"
+    testCompileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: "3.0.2"
 
     // PMD
-    compileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: '6.2.0'
-    testCompileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: '6.2.0'
+    compileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: "6.2.0"
+    testCompileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: "6.2.0"
 
     // JUnit
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.1.0'
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.1.0'
-    testCompileOnly group: 'org.apiguardian', name: 'apiguardian-api', version: '1.0.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: "5.1.0"
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: "5.1.0"
+    testCompileOnly group: 'org.apiguardian', name: 'apiguardian-api', version: "1.0.0"
 }
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+    options.debug = true
     options.compilerArgs << "-parameters" << "-Xlint:all" << "-Xdoclint:all"
 }
 
@@ -75,9 +76,9 @@ tasks.withType(JavaCompile) {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId 'ninja.javahacker'
-            artifactId 'xjfunctions'
-            version '${version}'
+            groupId "ninja.javahacker"
+            artifactId "xjfunctions"
+            version "${version}"
 
             from components.java
         }
