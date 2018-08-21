@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "ninja.javahacker"
-version = "0.3.1"
+version = "0.4.0"
 ext.moduleName = "ninja.javahacker.xjfunctions"
 
 ext.versionApiguardian = "1.0.0"
