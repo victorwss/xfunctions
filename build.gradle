@@ -8,25 +8,82 @@ plugins {
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
     id "com.github.johnrengelman.shadow" version "2.0.4"
     id "com.github.spotbugs" version "1.6.2"
+    id "java-library"
+    id "maven-publish"
+    id "checkstyle"
+    id "signing"
+    id "jacoco"
 }
 
 group = "ninja.javahacker"
 version = "0.4.0"
-ext.moduleName = "ninja.javahacker.xjfunctions"
+String artifactBaseName = "xjfunctions"
+
+ext.javaCompiler = "1.8"
+ext.doclint = true
+ext.extraCompilerArgs = []
 
 ext.versionApiguardian = "1.0.0"
 ext.versionCheckstyle = "8.12"
 ext.versionFindSecBugs = "1.8.0"
+ext.versionJaCoCo = "0.8.1"
 ext.versionJcip = "1.0"
 ext.versionJunit = "5.3.0-RC1"
 ext.versionJsr305 = "3.0.2"
 ext.versionPmd = "6.6.0"
 ext.versionSpotBugs = "3.1.6"
 
-apply plugin: 'base'
-apply plugin: 'java'
-apply plugin: 'maven-publish'
-apply plugin: 'checkstyle'
+dependencies {
+
+    // PMD
+    compileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: "${versionPmd}"
+    testCompileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: "${versionPmd}"
+
+    // JUnit
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: "${versionJunit}"
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: "${versionJunit}"
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: "${versionJunit}"
+    testCompileOnly group: 'org.apiguardian', name: 'apiguardian-api', version: "${versionApiguardian}"
+
+    // SpotBugs + Find Security Bugs
+    compileOnly group: 'com.h3xstream.findsecbugs', name: 'findsecbugs-plugin', version: "${versionFindSecBugs}"
+    compileOnly group: 'net.jcip', name: 'jcip-annotations', version: "${versionJcip}"
+    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: "${versionSpotBugs}"
+    compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: "${versionJsr305}"
+    testCompileOnly group: 'com.h3xstream.findsecbugs', name: 'findsecbugs-plugin', version: "${versionFindSecBugs}"
+    testCompileOnly group: 'net.jcip', name: 'jcip-annotations', version: "${versionJcip}"
+    testCompileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: "${versionSpotBugs}"
+    testCompileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: "${versionJsr305}"
+}
+
+println "Using Java " + org.gradle.api.JavaVersion.current() + "."
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = javaCompiler
+    targetCompatibility = javaCompiler
+    options.encoding = 'UTF-8'
+    options.debug = true
+    options.fork = true
+    options.compilerArgs << "-parameters" << "-Xlint:all,-processing"
+    if (doclint) options.compilerArgs << "-Xdoclint:all"
+    extraCompilerArgs.each { e -> options.compilerArgs << e }
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
+    options.docEncoding = "UTF-8"
+    options.addBooleanOption('html5', true)
+    options.tags = ["apiNote:a:API Note:", "implSpec:a:Implementation Requirements:", "implNote:a:Implementation Note:"]
+}
 
 checkstyle {
     toolVersion = "${versionCheckstyle}"
@@ -42,46 +99,6 @@ spotbugs {
     toolVersion = "${versionSpotBugs}"
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-    mavenLocal()
-    jcenter()
-    mavenCentral()
-}
-
-dependencies {
-
-    // Find Security Bugs
-    compile group: 'com.h3xstream.findsecbugs', name: 'findsecbugs-plugin', version: "${versionFindSecBugs}"
-
-    // PMD
-    compileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: "${versionPmd}"
-    testCompileOnly group: 'net.sourceforge.pmd', name: 'pmd', version: "${versionPmd}"
-
-    // SpotBugs
-    compileOnly group: 'net.jcip', name: 'jcip-annotations', version: "${versionJcip}"
-    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: "${versionSpotBugs}"
-    compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: "${versionJsr305}"
-    testCompileOnly group: 'net.jcip', name: 'jcip-annotations', version: "${versionJcip}"
-    testCompileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: "${versionSpotBugs}"
-    testCompileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: "${versionJsr305}"
-
-    // JUnit
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: "${versionJunit}"
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: "${versionJunit}"
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: "${versionJunit}"
-    testCompileOnly group: 'org.apiguardian', name: 'apiguardian-api', version: "${versionApiguardian}"
-}
-
-tasks.withType(JavaCompile) {
-    sourceCompatibility = "1.8"
-    options.encoding = 'UTF-8'
-    options.debug = true
-    options.compilerArgs << "-parameters" << "-Xlint:all" << "-Xdoclint:all"
-}
-
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
     reports {
         xml.enabled = false
@@ -89,32 +106,59 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
     }
 }
 
-task sourceJar(type: Jar) {
+jar {
+    baseName = artifactBaseName
+    duplicatesStrategy = "exclude"
+    inputs.property("moduleName", "${group}.${baseName}")
+    manifest {
+        attributes("Automatic-Module-Name": "${group}.${baseName}")
+    }
+}
+
+task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
     classifier "sources"
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            artifactId "xjfunctions"
-            from components.java
-
-            artifact sourceJar {
-                classifier "sources"
-            }
-        }
-    }
-}
-
-jar {
-    duplicatesStrategy = "exclude"
-    inputs.property("moduleName", moduleName)
-    manifest {
-        attributes("Automatic-Module-Name": moduleName)
-    }
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier "javadoc"
 }
 
 test {
     useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = "${versionJaCoCo}"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId jar.baseName
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                developers {
+                    developer {
+                        name = 'Victor Williams Stafusa da Silva'
+                        email = 'victorwssilva@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
