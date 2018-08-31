@@ -12,7 +12,7 @@ import java.util.function.BiConsumer;
  * to operate via side-effects.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #accept(Object, Object)}.
+ * whose functional method is {@link #accept(Object, Object)}.</p>
  *
  * @param <T> the type of the first argument to the operation
  * @param <U> the type of the second argument to the operation

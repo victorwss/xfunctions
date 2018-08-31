@@ -6,7 +6,7 @@ package ninja.javahacker.xjfunctions;
  * {@link java.util.function.Function Function}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(char)}.
+ * whose functional method is {@link #apply(char)}.</p>
  *
  * @param <R> the type of the result of the function
  *

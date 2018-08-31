@@ -10,7 +10,7 @@ import java.util.function.BiPredicate;
  * exception-friendly specialization of {@link BiPredicate}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #test(Object, Object)}.
+ * whose functional method is {@link #test(Object, Object)}.</p>
  *
  * @param <T> the type of the first argument to the predicate
  * @param <U> the type of the second argument the predicate
@@ -43,7 +43,7 @@ public interface XBiPredicate<T, U> {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ANDed with this
      *     predicate
@@ -75,7 +75,7 @@ public interface XBiPredicate<T, U> {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ORed with this
      *     predicate

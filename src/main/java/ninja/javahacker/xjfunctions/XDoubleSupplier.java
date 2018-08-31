@@ -10,10 +10,10 @@ import java.util.function.DoubleSupplier;
  * the exception-friendly specialization of {@link DoubleSupplier}.
  *
  * <p>There is no requirement that a new or distinct result be returned each
- * time the supplier is invoked.
+ * time the supplier is invoked.</p>
  *
  * <p>This is a functional interface
- * whose functional method is {@link #getAsDouble()}.
+ * whose functional method is {@link #getAsDouble()}.</p>
  *
  * @see DoubleSupplier
  * @see XSupplier

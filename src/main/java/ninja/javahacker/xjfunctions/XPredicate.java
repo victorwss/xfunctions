@@ -8,7 +8,7 @@ import java.util.function.Predicate;
  * that might throw any exception when evaluated.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #test(Object)}.
+ * whose functional method is {@link #test(Object)}.</p>
  *
  * @param <T> the type of the input to the predicate
  *
@@ -38,7 +38,7 @@ public interface XPredicate<T> {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ANDed with this
      *     predicate
@@ -70,7 +70,7 @@ public interface XPredicate<T> {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ORed with this
      *     predicate

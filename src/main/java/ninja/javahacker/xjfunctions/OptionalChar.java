@@ -12,12 +12,12 @@ import java.util.function.Supplier;
  * value are provided, such as {@link #orElse(char) orElse()}
  * (return a default value if value not present) and
  * {@link #ifPresent(CharConsumer) ifPresent()} (execute a block
- * of code if the value is present).
+ * of code if the value is present).</p>
  *
  * <p>This is a value-based
  * class; use of identity-sensitive operations (including reference equality
  * ({@code ==}), identity hash code, or synchronization) on instances of
- * {@code OptionalChar} may have unpredictable results and should be avoided.
+ * {@code OptionalChar} may have unpredictable results and should be avoided.</p>
  *
  * @since XJFunctions 1.0
  * @author Victor Williams Stafusa da Silva
@@ -30,7 +30,7 @@ public class OptionalChar {
     private static final OptionalChar EMPTY = new OptionalChar();
 
     /**
-     * If true then the value is present, otherwise indicates no value is present
+     * If true then the value is present, otherwise indicates no value is present.
      */
     private final boolean isPresent;
 
@@ -169,9 +169,9 @@ public class OptionalChar {
      * Indicates whether some other object is "equal to" this OptionalChar. The
      * other object is considered equal if:
      * <ul>
-     * <li>it is also an {@code OptionalChar} and;
-     * <li>both instances have no value present or;
-     * <li>the present values are "equal to" each other via {@code ==}.
+     * <li>it is also an {@code OptionalChar} and;</li>
+     * <li>both instances have no value present or;</li>
+     * <li>the present values are "equal to" each other via {@code ==}.</li>
      * </ul>
      *
      * @param obj an object to be tested for equality

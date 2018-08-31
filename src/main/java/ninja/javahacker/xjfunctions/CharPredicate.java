@@ -8,7 +8,7 @@ import java.util.Objects;
  * of {@link java.util.function.Predicate Predicate}.
  *
  * <p>This is afunctional interface
- * whose functional method is {@link #test(char)}.
+ * whose functional method is {@link #test(char)}.</p>
  *
  * @see java.util.function.Predicate
  * @see java.util.function.IntPredicate
@@ -36,7 +36,7 @@ public interface CharPredicate {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ANDed with this
      *     predicate
@@ -68,7 +68,7 @@ public interface CharPredicate {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ORed with this
      *     predicate

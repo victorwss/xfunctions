@@ -14,10 +14,10 @@ import java.util.function.IntConsumer;
  * {@code XIntConsumer} is expected to operate via side-effects.
  *
  * <p>There is no requirement that a new or distinct result be returned each
- * time the supplier is invoked.
+ * time the supplier is invoked.</p>
  *
  * <p>This is a functional interface
- * whose functional method is {@link #accept(int)}.
+ * whose functional method is {@link #accept(int)}.</p>
  *
  * @see java.util.function.Consumer
  * @see java.util.function.IntConsumer

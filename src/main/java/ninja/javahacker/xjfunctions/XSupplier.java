@@ -7,10 +7,10 @@ import java.util.function.Supplier;
  * Represents a supplier of results that might throw any exception.
  *
  * <p>There is no requirement that a new or distinct result be returned each
- * time the supplier is invoked.
+ * time the supplier is invoked.</p>
  *
  * <p>This is a functional interface
- * whose functional method is {@link #get()}.
+ * whose functional method is {@link #get()}.</p>
  *
  * @param <T> the type of results supplied by this supplier
  *

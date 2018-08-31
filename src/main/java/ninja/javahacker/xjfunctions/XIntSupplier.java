@@ -10,10 +10,10 @@ import java.util.function.IntSupplier;
  * the exception-friendly specialization of {@link IntSupplier}.
  *
  * <p>There is no requirement that a new or distinct result be returned each
- * time the supplier is invoked.
+ * time the supplier is invoked.</p>
  *
  * <p>This is a functional interface
- * whose functional method is {@link #getAsInt()}.
+ * whose functional method is {@link #getAsInt()}.</p>
  *
  * @see IntSupplier
  * @see XSupplier

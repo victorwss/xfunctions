@@ -10,7 +10,7 @@ import java.util.Objects;
  * {@link CharFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(char)}.
+ * whose functional method is {@link #apply(char)}.</p>
  *
  * @param <R> the type of the result of the function
  *

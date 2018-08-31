@@ -6,7 +6,7 @@ import java.util.Objects;
  * Represents a tasks that might throw any exception.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #run()}.
+ * whose functional method is {@link #run()}.</p>
  *
  * @see Runnable
  *

@@ -10,10 +10,10 @@ import java.util.function.BooleanSupplier;
  * the exception-friendly specialization of {@link BooleanSupplier}.
  *
  * <p>There is no requirement that a new or distinct result be returned each
- * time the supplier is invoked.
+ * time the supplier is invoked.</p>
  *
  * <p>This is a functional interface
- * whose functional method is {@link #getAsBoolean()}.
+ * whose functional method is {@link #getAsBoolean()}.</p>
  *
  * @see BooleanSupplier
  * @see XSupplier

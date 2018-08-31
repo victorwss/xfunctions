@@ -10,7 +10,7 @@ import java.util.function.ToLongFunction;
  * and the exception-friendly specialization for {@link ToLongFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #applyAsLong(Object)}.
+ * whose functional method is {@link #applyAsLong(Object)}.</p>
  *
  * @param <T> the type of the input to the function
  *

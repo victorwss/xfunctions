@@ -10,7 +10,7 @@ import java.util.Objects;
  * {@link CharPredicate}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #test(char)}.
+ * whose functional method is {@link #test(char)}.</p>
  *
  * @see XPredicate
  * @see CharPredicate
@@ -39,7 +39,7 @@ public interface XCharPredicate {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ANDed with this
      *     predicate
@@ -71,7 +71,7 @@ public interface XCharPredicate {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ORed with this
      *     predicate

@@ -9,7 +9,7 @@ import java.util.Objects;
  * and the exception-friendly specialization for {@link ToCharFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #applyAsChar(Object)}.
+ * whose functional method is {@link #applyAsChar(Object)}.</p>
  *
  * @param <T> the type of the input to the function
  *

@@ -6,10 +6,10 @@ package ninja.javahacker.xjfunctions;
  * {@link java.util.function.Supplier Supplier}.
  *
  * <p>There is no requirement that a distinct result be returned each
- * time the supplier is invoked.
+ * time the supplier is invoked.</p>
  *
  * <p>This is afunctional interface
- * whose functional method is {@link #getAsChar()}.
+ * whose functional method is {@link #getAsChar()}.</p>
  *
  * @see java.util.function.Supplier
  * @see java.util.function.IntSupplier

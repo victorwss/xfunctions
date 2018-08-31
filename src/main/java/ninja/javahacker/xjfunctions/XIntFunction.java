@@ -11,7 +11,7 @@ import java.util.function.IntFunction;
  * {@link IntFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(int)}.
+ * whose functional method is {@link #apply(int)}.</p>
  *
  * @param <R> the type of the result of the function
  *

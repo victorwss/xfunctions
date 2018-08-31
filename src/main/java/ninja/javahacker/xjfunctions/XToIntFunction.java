@@ -10,7 +10,7 @@ import java.util.function.ToIntFunction;
  * and the exception-friendly specialization for {@link ToIntFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #applyAsInt(Object)}.
+ * whose functional method is {@link #applyAsInt(Object)}.</p>
  *
  * @param <T> the type of the input to the function
  *

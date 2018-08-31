@@ -11,7 +11,7 @@ import java.util.function.Consumer;
  * to operate via side-effects.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #accept(Object)}.
+ * whose functional method is {@link #accept(Object)}.</p>
  *
  * @param <T> the type of the input to the operation
  *

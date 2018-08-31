@@ -10,7 +10,7 @@ import java.util.function.ToDoubleFunction;
  * and the exception-friendly specialization for {@link ToDoubleFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #applyAsDouble(Object)}.
+ * whose functional method is {@link #applyAsDouble(Object)}.</p>
  *
  * @param <T> the type of the input to the function
  *

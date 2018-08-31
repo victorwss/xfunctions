@@ -11,7 +11,7 @@ import java.util.function.DoubleFunction;
  * {@link DoubleFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(double)}.
+ * whose functional method is {@link #apply(double)}.</p>
  *
  * @param <R> the type of the result of the function
  *

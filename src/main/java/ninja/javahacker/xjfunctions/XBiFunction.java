@@ -10,7 +10,7 @@ import java.util.function.BiFunction;
  * exception-friendly specialization of {@link BiFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(Object, Object)}.
+ * whose functional method is {@link #apply(Object, Object)}.</p>
  *
  * @param <T> the type of the first argument to the function
  * @param <U> the type of the second argument to the function

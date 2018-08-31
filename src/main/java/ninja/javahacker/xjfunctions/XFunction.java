@@ -1,5 +1,6 @@
 package ninja.javahacker.xjfunctions;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -9,7 +10,7 @@ import java.util.function.Function;
  * This is exception-friendly specialization of {@link Function}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(Object)}.
+ * whose functional method is {@link #apply(Object)}.</p>
  *
  * @param <T> the type of the input to the function
  * @param <R> the type of the result of the function
@@ -77,6 +78,7 @@ public interface XFunction<T, R> {
      * @param <T> the type of the input and output objects to the function
      * @return a function that always returns its input argument
      */
+    @SuppressFBWarnings("FII_USE_FUNCTION_IDENTITY")
     public static <T> XFunction<T, T> identity() {
         return t -> t;
     }

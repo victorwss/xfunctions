@@ -11,7 +11,7 @@ import java.util.function.IntPredicate;
  * {@link IntPredicate}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #test(int)}.
+ * whose functional method is {@link #test(int)}.</p>
  *
  * @see XPredicate
  * @see IntPredicate
@@ -40,7 +40,7 @@ public interface XIntPredicate {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ANDed with this
      *     predicate
@@ -72,7 +72,7 @@ public interface XIntPredicate {
      *
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
-     * {@code other} predicate will not be evaluated.
+     * {@code other} predicate will not be evaluated.</p>
      *
      * @param other a predicate that will be logically-ORed with this
      *     predicate

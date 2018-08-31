@@ -10,7 +10,7 @@ import java.util.Objects;
  * {@code CharConsumer} is expected to operate via side-effects.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #accept(char)}.
+ * whose functional method is {@link #accept(char)}.</p>
  *
  * @see java.util.function.Consumer
  * @see java.util.function.IntConsumer

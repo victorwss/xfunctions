@@ -11,7 +11,7 @@ import java.util.function.LongFunction;
  * {@link LongFunction}.
  *
  * <p>This is a functional interface
- * whose functional method is {@link #apply(long)}.
+ * whose functional method is {@link #apply(long)}.</p>
  *
  * @param <R> the type of the result of the function
  *
