@@ -1,5 +1,6 @@
 package ninja.javahacker.xjfunctions;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 
 /**
@@ -45,7 +46,7 @@ public class WrapperException extends RuntimeException {
      * @throws RuntimeException If this is the cause of this exception
      * @throws Error If this is the cause of this exception
      */
-    public WrapperException checked() throws RuntimeException, Error {
+    public WrapperException checked() {
         return rethrow(RuntimeException.class).rethrow(Error.class);
     }
 }
