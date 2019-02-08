@@ -1,6 +1,5 @@
 package ninja.javahacker.xjfunctions;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 
 /**
